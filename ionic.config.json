@@ -1,0 +1,7 @@
+{
+  "name": "jeoparty",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
