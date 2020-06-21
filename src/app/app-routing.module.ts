@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'contestant',
     loadChildren: () => import('./contestant/contestant.module').then( m => m.ContestantPageModule)
   },
+  {
+    path: 'waiting',
+    loadChildren: () => import('./waiting/waiting.module').then( m => m.WaitingPageModule)
+  },
 ];
 
 @NgModule({

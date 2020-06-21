@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Game } from '../models/Game';
+import { UserFlow } from '../models/UserFlow';
+import { UserFlowService } from '../user-flow.service';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class HomePage {
     gamesCollectionRef: AngularFirestoreCollection<Game>;
     pinToRemove: string;
 
-    constructor(public afs: AngularFirestore, private router: Router) {
+    constructor(public afs: AngularFirestore, private router: Router, private userFlowService: UserFlowService) {
         this.gamesCollectionRef = afs.collection<Game>('games');
         this.games = this.gamesCollectionRef.valueChanges();
     }
@@ -25,10 +27,13 @@ export class HomePage {
         let PIN = this.generatePin();
         console.log(PIN);
         this.gamesCollectionRef.doc(PIN).set(this.initGameState());
+        this.userFlowService.setUserFlow(UserFlow.TREBEK);
+        this.router.navigate(['/waiting']);
     }
 
     goToContestant(): any {
-        this.router.navigate(['/contestant'])
+        this.userFlowService.setUserFlow(UserFlow.CONTESTANT);
+        this.router.navigate(['/waiting']);
     }
 
     generatePin(): string {
