@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Welcome to Jeoparty!
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,10 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button size="large" color="primary" (click)="startNewGame()">Alex Trebek, Click Here</ion-button>
+    <ion-button size="large" color="primary" (click)="goToContestant()">Contestant, Click Here</ion-button>
+    <br/>
+    <ion-input type="text" [(ngModel)]="pinToRemove"></ion-input>
+    <ion-button size="small" color="primary" (click)="removeTestGame()">Remove Test Game</ion-button>
   </div>
 </ion-content>
