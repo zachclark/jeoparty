@@ -12,4 +12,8 @@ export class UserFlowService {
   setUserFlow(flow: UserFlow) {
       this.userFlow = flow;
   }
+
+  getUserFlow(): UserFlow {
+      return this.userFlow;
+  }
 }

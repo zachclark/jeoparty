@@ -5,5 +5,25 @@
 </ion-header>
 
 <ion-content>
+    <div *ngIf="doneWithInput && !loading else loadingBar">
+        <h1>WAITING FOR OTHERS TO JOIN</h1>
+    </div>
 
+    <ng-template #loadingBar>
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </ng-template>
+
+    <div *ngIf="!doneWithInput && userFlow === 'TREBEK'">
+        <ion-item>
+            <ion-label position="floating">How many contestants?</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+    </div>
+
+    <div *ngIf="!doneWithInput && userFlow === 'CONTESTANT'">
+        <ion-item>
+            <ion-label position="floating">Game PIN</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+    </div>
 </ion-content>

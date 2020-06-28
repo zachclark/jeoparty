@@ -1,82 +1,56 @@
-<!-- <ion-content>
-  <!-- <ion-item>
-    <ion-label position="floating" type="text">PIN from Alex</ion-label>
-    <ion-input [(ngModel)]="gamePin"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" type="text">Name</ion-label>
-    <ion-input [(ngModel)]="name"></ion-input>
-  </ion-item>
-  <ion-button color="primary" (click)="addPlayer()">Add Me</ion-button> -->
-  <!-- <ion-card> -->
-      <!-- <ion-card-header>
-          <ion-card-title>Enter PIN</ion-card-title>
-      </ion-card-header> -->
-      <!-- <ion-card-content>
-          <ion-item>
-            <ion-label position="floating" type="text">PIN from Alex</ion-label>
-            <ion-input [(ngModel)]="gamePin"></ion-input>
-          </ion-item>
-          <ion-button color="primary ion-float-right" (click)="addPlayer()">Add Me</ion-button>
-      </ion-card-content>
-  </ion-card>
-</ion-content> -->
-
 <ion-content>
-    <ion-card>
-        <ion-text class="ion-text-center">
-            <h4>{{this.pin}}</h4>
-        </ion-text>
-        <ion-grid class="ion-text-center">
-            <ion-row>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('1')">1</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('2')">2</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('3')">3</ion-button>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('4')">4</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('5')">5</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('6')">6</ion-button>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('7')">7</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('8')">8</ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('9')">9</ion-button>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col></ion-col>
-                <ion-col>
-                    <ion-button shape="round" size="large" fill="outline" (click)="handleInput('0')">0</ion-button>
-                </ion-col>
-                <ion-col></ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-button size="large" fill="clear" (click)="handleInput('clear')">Clear</ion-button>
-                </ion-col>
-                <ion-col></ion-col>
-                <ion-col>
-                    <ion-button size="large" fill="clear" (click)="allDone()">OK</ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-card>
+    <ion-text class="ion-text-center">
+        <h4>{{this.pin}}</h4>
+    </ion-text>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="ion-text-right">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('1')">1</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('2')">2</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-left">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('3')">3</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="ion-text-right">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('4')">4</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('5')">5</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-left">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('6')">6</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="ion-text-right">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('7')">7</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('8')">8</ion-button>
+            </ion-col>
+            <ion-col class="ion-text-left">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('9')">9</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col></ion-col>
+            <ion-col class="ion-text-center">
+                <ion-button shape="round" size="large" fill="outline" (click)="handleInput('0')">0</ion-button>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="ion-text-right">
+                <ion-button size="large" fill="clear" (click)="handleInput('clear')">Clear</ion-button>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col class="ion-text-left">
+                <ion-button size="large" fill="clear" (click)="allDone()" disabled="pin.length !== 4">OK</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

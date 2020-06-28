@@ -24,6 +24,7 @@ export class EnterPinComponent implements OnInit {
       }
 
       this.pin += pin;
+      console.log(this.pin);
   }
 
   allDone() {
